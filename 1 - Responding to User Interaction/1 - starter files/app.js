@@ -2,17 +2,16 @@ const btnCreate = document.getElementById("btn-main");
 const btnToggle = document.querySelector(".btn-toggle");
 const btnRemove = document.querySelector(".btn-remove");
 const taskList = document.querySelector(".list-container ul");
-const listItem = document.getElementsByTagName("li");
 
-for (let i = 0; i < listItem.length; i += 1) {
-	listItem[i].addEventListener("mouseover", () => {
-		listItem[i].textContent = listItem[i].textContent.toUpperCase();
-	});
-}
-
-document.addEventListener("click", (event) => {
-	console.log(event);
+taskList.addEventListener('mouseover', (event)=>{
+	if(event.target.tagName === 'LI') {
+		event.target.textContent = event.target.textContent.toUpperCase();
+	}
 });
+
+document.addEventListener('click', (event)=>{
+	console.log(event)
+})
 
 btnToggle.addEventListener("click", () => {
 	const listContainer = document.querySelector(".list-container");
